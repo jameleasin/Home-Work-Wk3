@@ -22,3 +22,5 @@ function generatePassword() {
     alert("Password length must be between 8-128 characters Try again");
     var confirmLength = (prompt("How many characters would you like your password to contain?"));
   }
+  // Re prompt back how many charactes the user will have between 8 - 128 
+  alert(`Your password will have ${confirmLength} characters`);
