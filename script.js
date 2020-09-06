@@ -9,8 +9,8 @@ var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 
 // Variable declaration to use when user is prompted for each character type
 var confirmLength = "";
-var confirmSpecialCharacter;
-var confirmNumericCharacter;
+var confirmSpecialChar;
+var confirmNumericChar;
 var confirmUpperCase;
 var confirmLowerCase;
 
@@ -24,3 +24,9 @@ function generatePassword() {
   }
   // Re prompt back how many charactes the user will have between 8 - 128 
   alert(`Your password will have ${confirmLength} characters`);
+
+  // Determine parameters of password using confirm popup boxes. If "OK" is pressed then confirmed, if "CANCEL" is selected the denied in password
+  var confirmSpecialChar = confirm("Click OK to confirm if you would like to include special characters");
+  var confirmNumericChar = confirm("Click OK to confirm if you would like to include numeric characters");
+  var confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
+  var confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
