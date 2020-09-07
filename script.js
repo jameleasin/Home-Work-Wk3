@@ -39,7 +39,7 @@ function generatePassword() {
         var confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
         var confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
     }
-    // each character assignment is concatinated on to the next making up the password
+    // each character assignment is concatinated on to the next making up the password if those characters are chosen during user prompt
     var passwordCharacters = []
 
     if (confirmSpecialCharacter) {
@@ -51,9 +51,28 @@ function generatePassword() {
     }
 
     if (confirmLowerCase) {
-        passwordCharacters = passwordCharacters.concat(alphaLower)
+        passwordCharacters = passwordCharacters.concat(lowerChar)
     }
 
     if (confirmUpperCase) {
-        passwordCharacters = passwordCharacters.concat(alphaUpper)
+        passwordCharacters = passwordCharacters.concat(upperChar)
     }
+
+    // Empty string to be filled based on for loop selecting random characters from the array
+    var randomPassword = ""
+    //for variable index = 0 index is less than the length then plus 1 untill desired password length is met
+    //random password = the characters selected that are then randomized until it reached the password length
+    for (var i = 0; i < confirmLength; i++) {
+        randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+        console.log(randomPassword)
+    }
+    //password is printed
+    return randomPassword;
+}
+// Write password to the #password input
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;
+  }
