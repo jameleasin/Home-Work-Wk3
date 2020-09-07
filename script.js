@@ -25,8 +25,17 @@ function generatePassword() {
   // Re prompt back how many charactes the user will have between 8 - 128 
   alert(`Your password will have ${confirmLength} characters`);
 
-  // Determine parameters of password using confirm popup boxes. If "OK" is pressed then confirmed, if "CANCEL" is selected the denied in password
+  // using the declared variables, determine parameters of password using confirm popup boxes. If "OK" is pressed then confirmed, if "CANCEL" is selected the denied in password
   var confirmSpecialChar = confirm("Click OK to confirm if you would like to include special characters");
   var confirmNumericChar = confirm("Click OK to confirm if you would like to include numeric characters");
   var confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
   var confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
+
+   // while all conditionals are not met loop if answer is outside the parameters & prompt is run again
+   while (confirmUpperCase === false && confirmLowerCase === false && confirmSpecialCharacter === false && confirmNumericCharacter === false) {
+    alert("You must choose at least one parameter");
+    var confirmSpecialChar = confirm("Click OK to confirm if you would like to include special characters");
+    var confirmNumericChar = confirm("Click OK to confirm if you would like to include numeric characters");
+    var confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
+    var confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
+  }
