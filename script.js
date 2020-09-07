@@ -42,11 +42,11 @@ function generatePassword() {
     // each character assignment is concatinated on to the next making up the password if those characters are chosen during user prompt
     var passwordCharacters = []
 
-    if (confirmSpecialCharacter) {
+    if (confirmSpecialChar) {
         passwordCharacters = passwordCharacters.concat(specialChar)
     }
 
-    if (confirmNumericCharacter) {
+    if (confirmNumericChar) {
         passwordCharacters = passwordCharacters.concat(number)
     }
 
